@@ -1,0 +1,69 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e6e6e6;
+
+    align-items: center;
+    padding: 1rem 0;
+    background-color: white;
+    /* Fond blanc */
+    border-bottom: 1px solid #e6e6e6;
+
+    /* Ces propriétés rendent le header fixe */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* S'assure que le header reste au-dessus des autres éléments */
+
+    /* Ajoute une ombre subtile lorsque le header est fixe */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    /* Ajoute un peu d'espace sur les côtés */
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    border-radius: 10px;
+
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header nav ul li {
+    margin-left: 1.5rem;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header {}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header nav ul {
+        margin-top: 1rem;
+    }
+
+    .header nav ul li {
+        margin: 0 0.5rem;
+    }
+}
