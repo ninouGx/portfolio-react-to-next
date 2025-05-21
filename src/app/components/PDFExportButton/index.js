@@ -7,6 +7,11 @@ import './PDFExport.css';
 
 function PDFExportButton({ projects }) {
     const [isGenerating, setIsGenerating] = useState(false);
+    const [showAnnouncement, setShowAnnouncement] = useState(true);
+
+    const dismissAnnouncement = () => {
+        setShowAnnouncement(false);
+    };
 
     const generatePDF = async () => {
         setIsGenerating(true);
@@ -153,15 +158,43 @@ function PDFExportButton({ projects }) {
     };
 
     return (
-        <button
-            type="button"
-            onClick={generatePDF}
-            disabled={isGenerating}
-            className="btn btn-secondary pdf-button"
-            aria-label="Télécharger le portfolio en PDF"
-        >
-            {isGenerating ? 'Génération...' : 'Télécharger PDF'}
-        </button>
+        <>
+            {showAnnouncement && (
+                <div className="pdf-feature-announcement">
+                    <div className="sparkle sparkle-1" />
+                    <div className="sparkle sparkle-2" />
+                    <div className="sparkle sparkle-3" />
+                    <div className="sparkle sparkle-4" />
+                    <div className="ribbon">NOUVEAU !</div>
+                    <h3>✨ Nouvelle Fonctionnalité Disponible ! ✨</h3>
+                    <p>Exportez mon portfolio complet en PDF en un seul clic ! </p>
+                    <button
+                        type="button"
+                        onClick={dismissAnnouncement}
+                        style={{
+                            background: 'rgba(255,255,255,0.2)',
+                            border: 'none',
+                            color: 'white',
+                            padding: '5px 10px',
+                            borderRadius: '4px',
+                            marginTop: '10px',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        Compris !
+                    </button>
+                </div>
+            )}
+            <button
+                type="button"
+                onClick={generatePDF}
+                disabled={isGenerating}
+                className="btn btn-secondary pdf-button"
+                aria-label="Télécharger le portfolio en PDF"
+            >
+                {isGenerating ? 'Génération...' : 'Télécharger PDF'}
+            </button>
+        </>
     );
 }
 
