@@ -1,0 +1,49 @@
+.pdf-export-container {
+    width: 210mm;
+    /* A4 width */
+    padding: 20px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pdf-projects-section {
+    margin-top: 20px;
+}
+
+.pdf-project {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 3px solid #4a6fa5;
+    background-color: #f9f9fd;
+}
+
+.pdf-project h3 {
+    color: #4a6fa5;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.pdf-project p {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.pdf-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pdf-tech-tag {
+    background: #f4f4f4;
+    color: #4a6fa5;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+.pdf-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}

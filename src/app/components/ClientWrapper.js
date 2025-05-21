@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ProjectList from './ProjectList';
 import ProjectForm from './ProjectForm';
+import PDFExportButton from './PDFExportButton';
 
 export default function ClientWrapper() {
     const professionalProjects = [
@@ -86,6 +87,9 @@ export default function ClientWrapper() {
 
     return (
         <>
+            <div className="export-button-container" style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem 0' }}>
+                <PDFExportButton projects={projects} />
+            </div>
             <ProjectList projects={projects} />
             <ProjectForm onAddProject={addProject} />
         </>
